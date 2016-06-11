@@ -11,435 +11,564 @@
     <title>さむねーたー</title>
     <style rel="stylesheet" type="text/css">
         body {
-        -webkit-text-size-adjust: 100%;
-        font-family: 'Hiragino Kaku Gothic ProN', Meiryo, 'MS PGothic', Sans-serif;
-    	background-color:#E7E8F2;	/*ページ全体の背景色*/
-    	color:#3B5998;
-    }
-        .タイトル {
-        text-align:center;
-    }
-        #案内{
-        size:7px;
-        vertical-align: top;
-        background-color:#EBB848;
-        color:black;
-        left: 5%;
-        width: 54%;
-    }
-        #輪郭{
-	background-color:white;
-	position: absolute; 
-	left: 3%;
-	width: 50%;
-	height: 160px;
-	overflow-x:auto;
-	white-space: nowrap;
-	top: 240px;
-	border-radius: 10px;
-	box-shadow: 2px 2px  3px #00f inset,5px 5px  10px #428bca;
-}
-        #髪{
-	background-color:white;
-	position: absolute; 
-	left: 3%;
-	width: 50%;
-	height: 160px;
-	overflow-x: auto;
-	white-space: nowrap;
-	top: 410px;
-	border-radius: 20px;
-	box-shadow: 2px 2px  3px #00f inset,5px 5px  10px #428bca;
-}
-        #眉{
-	background-color:white;
-	position: absolute; 
-	left: 3%;
-	width: 50%;
-	height: 160px;
-	overflow-x: auto;
-	white-space: nowrap;
-	top: 580px;
-	border-radius: 20px;
-	box-shadow:2px 2px  3px #00f inset,5px 5px  10px #428bca;
-}
-        #目{
-	background-color:white;
-	position: absolute; 
-	left: 3%;
-	width: 50%;
-	height: 160px;
-	overflow-x: auto;
-	white-space: nowrap;
-	top: 750px;
-	border-radius: 20px;
-	box-shadow: 2px 2px  3px #00f inset,5px 5px  10px #428bca;
-}
-        #鼻{
-	background-color:white;
-	position: absolute; 
-	left: 3%;
-	width: 50%;
-	height: 160px;
-	overflow-x: auto;
-	white-space: nowrap;
-	top: 920px;
-	border-radius: 20px;
-	box-shadow: 2px 2px  3px #00f inset,5px 5px  10px #428bca;
-}
-        #頬{
-	background-color:white;
-	position: absolute; 
-	left: 3%;
-	width: 50%;
-	height: 160px;
-	overflow-x:auto;
-	white-space: nowrap;
-	top: 1090px;
-	border-radius: 20px;
-	box-shadow: 2px 2px  3px #00f inset,5px 5px  10px #428bca;
-}
-        #口{
-	background-color:white;
-	position: absolute; 
-	left: 3%;
-	width: 50%;
-	height: 160px;
-	overflow-x: auto;
-	white-space: nowrap;
-	top: 1260px;
-	border-radius: 20px;
-	box-shadow: 2px 2px  3px #00f inset,5px 5px  10px #428bca;
-}
-        #アクセサリー{
-	background-color:white;
-	position: absolute; 
-	left: 3%;
-	width: 50%;
-	height: 160px;
-	overflow-x: auto;
-	white-space: nowrap;
-	top: 1430px;
-	border-radius: 20px;
-	box-shadow: 2px 2px  3px #00f inset,5px 5px  10px #428bca;
-}
-        #背景{
-	background-color:white;
-	position: absolute; 
-	left: 3%;
-	width: 50%;
-	height: 160px;
-	overflow-x: auto;
-	white-space: nowrap;
-	top: 1600px;
-	border-radius: 20px;
-	box-shadow: 2px 2px  3px #00f inset,5px 5px  10px #428bca;
-}
-        #プレビュー{
-	position:fixed;
-	background-color:#3B5998;
-	left: 55%;
-	top:110px;
-}
-        .プレビュー画像{
-    width: 0;
-    height: 0;
-}
-        #tab li{
-    display:inline-block;
-}
-        #tab li:active{
-	border:solid 5px #3B5998;
-    cursor:pointer;
-}
-        #tab li:hover{
-    display:inline-block;
-    border:solid 3px #3B5998;
-    cursor:pointer;
-}
-        .imageCover6 {
-    width: 395px;
-    height: 395px;
-}
-#footer{
-size:50px;
-}
-    </style>
-
-    <script type="text/javascript">
-   $(document).ready(function(){
-    showImageCanvas();
-});
-function showImageCanvas(){
-    var fileArray = [ph09.src,ph01.src,ph02.src,ph03.src,ph04.src,ph05.src,ph06.src,ph07.src,ph08.src];
-    var numFiles = fileArray.length;
-    var loadedCount = 0;
-    var imageObjectArray = [];
-    var canvas = document.getElementById('jsImageCoverCanvas');
-
-    var ctx = canvas.getContext('2d');
-    function loadImages(){
-        var imgObj = new Image();
-        imgObj.addEventListener('load',
-            function(){
-                loadedCount++;
-                imageObjectArray.push(imgObj);
-                if(numFiles == loadedCount){
-                    drawImage();}
-                else{
-                    loadImages();}
-            },
-            false);
-        imgObj.src = fileArray[imageObjectArray.length];
-    }
-    function drawImage(){
-        canvas.width = 400;
-        canvas.height = 400;
-        for(var i in imageObjectArray){
-            ctx.drawImage(imageObjectArray[i], 0, 0, 400, 400);
-            imageObjectArray[i] = null;
+            -webkit-text-size-adjust: 100%;
+            font-family: 'Hiragino Kaku Gothic ProN', Meiryo, 'MS PGothic', Sans-serif;
+            background-color: #E7E8F2; /*ページ全体の背景色*/
+            color: #3B5998;
         }
-    }
-    loadImages();
-}
-    </script>
 
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-58476426-1', 'auto');
-  ga('send', 'pageview');
+        .タイトル {
+            text-align: center;
+        }
+
+        #案内 {
+            size: 7px;
+            vertical-align: top;
+            background-color: #EBB848;
+            color: black;
+            left: 5%;
+            width: 54%;
+        }
+
+        #輪郭 {
+            background-color: white;
+            position: absolute;
+            left: 3%;
+            width: 50%;
+            height: 160px;
+            overflow-x: auto;
+            white-space: nowrap;
+            top: 240px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 3px #00f inset,5px 5px 10px #428bca;
+        }
+
+        #髪 {
+            background-color: white;
+            position: absolute;
+            left: 3%;
+            width: 50%;
+            height: 160px;
+            overflow-x: auto;
+            white-space: nowrap;
+            top: 410px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 3px #00f inset,5px 5px 10px #428bca;
+        }
+
+        #眉 {
+            background-color: white;
+            position: absolute;
+            left: 3%;
+            width: 50%;
+            height: 160px;
+            overflow-x: auto;
+            white-space: nowrap;
+            top: 580px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 3px #00f inset,5px 5px 10px #428bca;
+        }
+
+        #目 {
+            background-color: white;
+            position: absolute;
+            left: 3%;
+            width: 50%;
+            height: 160px;
+            overflow-x: auto;
+            white-space: nowrap;
+            top: 750px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 3px #00f inset,5px 5px 10px #428bca;
+        }
+
+        #鼻 {
+            background-color: white;
+            position: absolute;
+            left: 3%;
+            width: 50%;
+            height: 160px;
+            overflow-x: auto;
+            white-space: nowrap;
+            top: 920px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 3px #00f inset,5px 5px 10px #428bca;
+        }
+
+        #頬 {
+            background-color: white;
+            position: absolute;
+            left: 3%;
+            width: 50%;
+            height: 160px;
+            overflow-x: auto;
+            white-space: nowrap;
+            top: 1090px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 3px #00f inset,5px 5px 10px #428bca;
+        }
+
+        #口 {
+            background-color: white;
+            position: absolute;
+            left: 3%;
+            width: 50%;
+            height: 160px;
+            overflow-x: auto;
+            white-space: nowrap;
+            top: 1260px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 3px #00f inset,5px 5px 10px #428bca;
+        }
+
+        #アクセサリー {
+            background-color: white;
+            position: absolute;
+            left: 3%;
+            width: 50%;
+            height: 160px;
+            overflow-x: auto;
+            white-space: nowrap;
+            top: 1430px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 3px #00f inset,5px 5px 10px #428bca;
+        }
+
+        #背景 {
+            background-color: white;
+            position: absolute;
+            left: 3%;
+            width: 50%;
+            height: 160px;
+            overflow-x: auto;
+            white-space: nowrap;
+            top: 1600px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 3px #00f inset,5px 5px 10px #428bca;
+        }
+
+        #プレビュー {
+            position: fixed;
+            background-color: #3B5998;
+            left: 55%;
+            top: 125px;
+        }
+
+        .プレビュー画像 {
+            width: 0;
+            height: 0;
+        }
+
+        #tab li {
+            display: inline-block;
+        }
+
+            #tab li:active {
+                border: solid 5px #3B5998;
+                cursor: pointer;
+            }
+
+            #tab li:hover {
+                display: inline-block;
+                border: solid 3px #3B5998;
+                cursor: pointer;
+            }
+
+        .imageCover6 {
+            width: 395px;
+            height: 395px;
+        }
+
+        #footer {
+			position: fixed;
+            left: 55%;
+			top:550px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            showImageCanvas();
+        });
+        function showImageCanvas() {
+            var fileArray = [ph09.src, ph01.src, ph02.src, ph03.src, ph04.src, ph05.src, ph06.src, ph07.src, ph08.src];
+            var numFiles = fileArray.length;
+            var loadedCount = 0;
+            var imageObjectArray = [];
+            var canvas = document.getElementById('jsImageCoverCanvas');
+
+            var ctx = canvas.getContext('2d');
+            function loadImages() {
+                var imgObj = new Image();
+                imgObj.addEventListener('load',
+                    function () {
+                        loadedCount++;
+                        imageObjectArray.push(imgObj);
+                        if (numFiles == loadedCount) {
+                            drawImage();
+                        }
+                        else {
+                            loadImages();
+                        }
+                    },
+                    false);
+                imgObj.src = fileArray[imageObjectArray.length];
+            }
+            function drawImage() {
+                canvas.width = 400;
+                canvas.height = 400;
+                for (var i in imageObjectArray) {
+                    ctx.drawImage(imageObjectArray[i], 0, 0, 400, 400);
+                    imageObjectArray[i] = null;
+                }
+            }
+            loadImages();
+        }
     </script>
 </head>
-
 <body>
-<h1 class="タイトル"><img alt="さむねーたー" src="./pictures/title.png" height="100"/></h1>
-<!--左側-->
-<h2 id="案内">右に画像が表示されます．<br/>右クリックで保存可能です．</h2>
-<div id="パーツ">
-		<img src="./pictures/09/1.jpg" alt="プレビュー背景" class="プレビュー画像" name="ph09" />		
-		<img src="./pictures/01/1.png" alt="プレビュー輪郭" class="プレビュー画像" name="ph01"/>
-		<img src="./pictures/02/1.png" alt="プレビュー髪" class="プレビュー画像" name="ph02" />
-		<img src="./pictures/03/1.png" alt="プレビュー眉" class="プレビュー画像" name="ph03" />
-		<img src="./pictures/04/1.png" alt="プレビュー目" class="プレビュー画像" name="ph04" />
-		<img src="./pictures/05/1.png" alt="プレビュー鼻" class="プレビュー画像" name="ph05" />
-		<img src="./pictures/06/1.png" alt="プレビュー頬" class="プレビュー画像" name="ph06" />
-		<img src="./pictures/07/1.png" alt="プレビュー口" class="プレビュー画像" name="ph07" />
-		<img src="./pictures/0.png" alt="プレビューアクセ" class="プレビュー画像" name="ph08" />
-<div id="輪郭">
-	<ul id="tab">
-	<li><a href="javascript:document.ph01.src = './pictures/01/1.png'; showImageCanvas(); void(0);"><!--パーツ記憶-->
-		<img  alt="輪郭1" height="100" src="./pictures/01/1.png" width="100" /><!---->
-	</a></li>
-	<li><a href="javascript:document.ph01.src = './pictures/01/2.png'; showImageCanvas(); void(0);">
-		<img alt="輪郭2" height="100" src="./pictures/01/2.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph01.src = './pictures/01/3.png'; showImageCanvas(); void(0);">
-		<img alt="輪郭3" height="100" src="./pictures/01/3.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph01.src = './pictures/01/4.png'; showImageCanvas(); void(0);">
-		<img alt="輪郭4" height="100" src="./pictures/01/4.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph01.src = './pictures/01/5.png'; showImageCanvas(); void(0);">
-		<img alt="輪郭5" height="100" src="./pictures/01/5.png" width="100" />
-	</a></li>
-	</ul>
-</div>
-<div id="髪">
-	<ul id="tab">
-	<li><a href="javascript:document.ph02.src = './pictures/02/1.png'; showImageCanvas(); void(0);"><!--パーツ記憶-->
-		<img  alt="髪1" height="100" src="./pictures/02/1.png" width="100" /><!---->
-	</a></li>
-	<li><a href="javascript:document.ph02.src = './pictures/02/2.png'; showImageCanvas(); void(0);">
-		<img alt="髪2" height="100" src="./pictures/02/2.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph02.src = './pictures/02/3.png'; showImageCanvas(); void(0);">
-		<img alt="髪3" height="100" src="./pictures/02/3.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph02.src = './pictures/02/4.png'; showImageCanvas(); void(0);">
-		<img alt="髪4" height="100" src="./pictures/02/4.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph02.src = './pictures/02/5.png'; showImageCanvas(); void(0);">
-		<img alt="髪5" height="100" src="./pictures/02/5.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph02.src = './pictures/0.png'; showImageCanvas(); void(0);">
-		<img alt="髪0" height="100" src="./pictures/0.png" width="100" />
-	</a></li>
-	</ul>
-</div>
-<div id="眉">
-	<ul id="tab">
-	<li><a href="javascript:document.ph03.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/03/1.png'; showImageCanvas(); void(0);"><!--パーツ記憶-->
-		<img  alt="眉1" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/03/1.png" width="100" /><!---->
-	</a></li>
-	<li><a href="javascript:document.ph03.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/03/2.png'; showImageCanvas(); void(0);">
-		<img alt="眉2" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/03/2.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph03.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/03/3.png'; showImageCanvas(); void(0);">
-		<img alt="眉3" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/03/3.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph03.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/03/4.png'; showImageCanvas(); void(0);">
-		<img alt="眉4" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/03/4.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph03.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/03/5.png'; showImageCanvas(); void(0);">
-		<img alt="眉5" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/03/5.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph03.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/0.png'; showImageCanvas(); void(0);">
-		<img alt="眉0" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/0.png" width="100" />
-	</a></li>
-	</ul>
-</div>
-<div id="目">
-	<ul id="tab">
-	<li><a href="javascript:document.ph04.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/04/1.png'; showImageCanvas(); void(0);"><!--パーツ記憶-->
-		<img alt="目1" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/04/1.png" width="100" /><!---->
-	</a></li>
-	<li><a href="javascript:document.ph04.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/04/2.png'; showImageCanvas(); void(0);">
-		<img alt="目2" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/04/2.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph04.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/04/3.png'; showImageCanvas(); void(0);">
-		<img alt="目3" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/04/3.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph04.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/04/4.png'; showImageCanvas(); void(0);">
-		<img alt="目4" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/04/4.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph04.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/04/5.png'; showImageCanvas(); void(0);">
-		<img alt="目5" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/04/5.png" width="100" />
-	</a></li>
-	</ul>
-</div>
-<div id="鼻">
-	<ul id="tab">
-	<li><a href="javascript:document.ph05.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/05/1.png'; showImageCanvas(); void(0);"><!--パーツ記憶-->
-		<img alt="鼻1" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/05/1.png" width="100" /><!---->
-	</a></li>
-	<li><a href="javascript:document.ph05.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/05/2.png'; showImageCanvas(); void(0);">
-		<img alt="鼻2" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/05/2.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph05.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/05/3.png'; showImageCanvas(); void(0);">
-		<img alt="鼻3" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/05/3.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph05.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/05/4.png'; showImageCanvas(); void(0);">
-		<img alt="鼻4" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/05/4.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph05.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/05/5.png'; showImageCanvas(); void(0);">
-		<img alt="鼻5" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/05/5.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph05.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/0.png'; showImageCanvas(); void(0);">
-		<img alt="鼻0" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/0.png" width="100" />
-	</a></li>
-	</ul>
-</div>
-<div id="頬">
-	<ul id="tab">
-	<li><a href="javascript:document.ph06.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/06/1.png'; showImageCanvas(); void(0);"><!--パーツ記憶-->
-		<img  alt="頬1" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/06/1.png" width="100" /><!---->
-	</a></li>
-	<li><a href="javascript:document.ph06.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/06/2.png'; showImageCanvas(); void(0);">
-		<img alt="頬2" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/06/2.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph06.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/06/3.png'; showImageCanvas(); void(0);">
-		<img alt="頬3" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/06/3.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph06.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/06/4.png'; showImageCanvas(); void(0);">
-		<img alt="頬4" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/06/4.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph06.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/06/5.png'; showImageCanvas(); void(0);">
-		<img alt="頬5" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/06/5.png" width="100" />
-	</a></li>
-	</ul>
-</div>
-
-<div id="口">
-	<ul id="tab">
-	<li><a href="javascript:document.ph07.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg//pictures/07/1.png'; showImageCanvas(); void(0);"><!--パーツ記憶-->
-		<img alt="口1" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg//pictures/07/1.png" width="100" /><!---->
-	</a></li>
-	<li><a href="javascript:document.ph07.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/07/2.png'; showImageCanvas(); void(0);">
-		<img alt="口2" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/07/2.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph07.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/07/3.png'; showImageCanvas(); void(0);">
-		<img alt="口3" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/07/3.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph07.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/07/4.png'; showImageCanvas(); void(0);">
-		<img alt="口4" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/07/4.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph07.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/07/5.png'; showImageCanvas(); void(0);">
-		<img alt="口5" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/07/5.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph07.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/07/6.png'; showImageCanvas(); void(0);">
-		<img alt="Dragon Night" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/07/6.png" width="100" />
-	</a></li>
-	</ul>
-</div>
-<div id="アクセサリー">
-	<ul id="tab">
-	<li><a href="javascript:document.ph08.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/08/1.png'; showImageCanvas(); void(0);"><!--パーツ記憶-->
-		<img alt="アクセサリー1" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/08/1.png" width="100" /><!---->
-	</a></li>
-	<li><a href="javascript:document.ph08.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/08/2.png'; showImageCanvas(); void(0);">
-		<img alt="アクセサリー2" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/08/2.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph08.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/08/3.png'; showImageCanvas(); void(0);">
-		<img alt="アクセサリー3" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/08/3.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph08.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/08/4.png'; showImageCanvas(); void(0);">
-		<img alt="アクセサリー4" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/08/4.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph08.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/08/5.png'; showImageCanvas(); void(0);">
-		<img alt="アクセサリー5" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/08/5.png" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph08.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/0.png'; showImageCanvas(); void(0);">
-		<img alt="アクセサリー0" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/0.png" width="100" />
-	</a></li>
-	</ul>
-</div>
-<div id="背景">
-	<ul id="tab">
-	<li><a href="javascript:document.ph09.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/1.jpg'; showImageCanvas(); void(0);"><!--パーツ記憶-->
-		<img alt="背景1" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/1.jpg" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph09.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/2.jpg'; showImageCanvas(); void(0);">
-		<img alt="背景2" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/2.jpg" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph09.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/3.jpg'; showImageCanvas(); void(0);">
-		<img alt="背景3" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/3.jpg" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph09.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/4.jpg'; showImageCanvas(); void(0);">
-		<img alt="背景4" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/4.jpg" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph09.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/5.jpg'; showImageCanvas(); void(0);">
-		<img alt="背景5" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/5.jpg" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph09.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/6.jpg'; showImageCanvas(); void(0);">
-		<img alt="背景6" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/6.jpg" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph09.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/7.jpg'; showImageCanvas(); void(0);">
-		<img alt="背景7" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/7.jpg" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph09.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/8.jpg'; showImageCanvas(); void(0);">
-		<img alt="背景8" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/8.jpg" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph09.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/9.jpg'; showImageCanvas(); void(0);">
-		<img alt="背景9" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/09/9.jpg" width="100" />
-	</a></li>
-	<li><a href="javascript:document.ph09.src = 'https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/0.png'; showImageCanvas(); void(0);">
-		<img alt="背景0" height="100" src="https://googledrive.com/host/0B-owDgIkOaX7S2FCX0JpT3Ryazg/pictures/0.png" width="100" />
-	</a></li>
-	</ul>
-</div>
-</div>
-<div id="プレビュー">
-		<div class="imageCover6">
-    		<canvas id="jsImageCoverCanvas">
-    			ご利用のブラウザでは正しく表示されません．<br/>最新版のPC版Google Chrome等をご利用ください．
-    		</canvas>
-		</div>
-</div>
-<div id="footer">
-Copyright © 2015<a> さむねーたー </a>All Rights Reserved.
-</div>
+    <h1 class="タイトル"><img alt="さむねーたー" src="./pictures/title.png" height="100" /></h1>
+    <!--左側-->
+    <h2 id="案内">右に画像が表示されます．<br />右クリックで保存可能です．</h2>
+    <div id="パーツ">
+        <img src="./pictures/09/1.jpg" alt="プレビュー背景" class="プレビュー画像" name="ph09" />
+        <img src="./pictures/01/1.png" alt="プレビュー輪郭" class="プレビュー画像" name="ph01" />
+        <img src="./pictures/02/1.png" alt="プレビュー髪" class="プレビュー画像" name="ph02" />
+        <img src="./pictures/03/1.png" alt="プレビュー眉" class="プレビュー画像" name="ph03" />
+        <img src="./pictures/04/1.png" alt="プレビュー目" class="プレビュー画像" name="ph04" />
+        <img src="./pictures/05/1.png" alt="プレビュー鼻" class="プレビュー画像" name="ph05" />
+        <img src="./pictures/06/1.png" alt="プレビュー頬" class="プレビュー画像" name="ph06" />
+        <img src="./pictures/07/1.png" alt="プレビュー口" class="プレビュー画像" name="ph07" />
+        <img src="./pictures/0.png" alt="プレビューアクセ" class="プレビュー画像" name="ph08" />
+        <div id="輪郭">
+            <ul id="tab">
+                <li>
+                    <a href="javascript:document.ph01.src = './pictures/01/1.png'; showImageCanvas(); void(0);">
+                        <!--パーツ記憶-->
+                        <img alt="輪郭1" height="100" src="./pictures/01/1.png" width="100" /><!---->
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph01.src = './pictures/01/2.png'; showImageCanvas(); void(0);">
+                        <img alt="輪郭2" height="100" src="./pictures/01/2.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph01.src = './pictures/01/3.png'; showImageCanvas(); void(0);">
+                        <img alt="輪郭3" height="100" src="./pictures/01/3.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph01.src = './pictures/01/4.png'; showImageCanvas(); void(0);">
+                        <img alt="輪郭4" height="100" src="./pictures/01/4.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph01.src = './pictures/01/5.png'; showImageCanvas(); void(0);">
+                        <img alt="輪郭5" height="100" src="./pictures/01/5.png" width="100" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="髪">
+            <ul id="tab">
+                <li>
+                    <a href="javascript:document.ph02.src = './pictures/02/1.png'; showImageCanvas(); void(0);">
+                        <!--パーツ記憶-->
+                        <img alt="髪1" height="100" src="./pictures/02/1.png" width="100" /><!---->
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph02.src = './pictures/02/2.png'; showImageCanvas(); void(0);">
+                        <img alt="髪2" height="100" src="./pictures/02/2.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph02.src = './pictures/02/3.png'; showImageCanvas(); void(0);">
+                        <img alt="髪3" height="100" src="./pictures/02/3.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph02.src = './pictures/02/4.png'; showImageCanvas(); void(0);">
+                        <img alt="髪4" height="100" src="./pictures/02/4.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph02.src = './pictures/02/5.png'; showImageCanvas(); void(0);">
+                        <img alt="髪5" height="100" src="./pictures/02/5.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph02.src = './pictures/0.png'; showImageCanvas(); void(0);">
+                        <img alt="髪0" height="100" src="./pictures/0.png" width="100" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="眉">
+            <ul id="tab">
+                <li>
+                    <a href="javascript:document.ph03.src = './pictures/03/1.png'; showImageCanvas(); void(0);">
+                        <!--パーツ記憶-->
+                        <img alt="眉1" height="100" src="./pictures/03/1.png" width="100" /><!---->
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph03.src = './pictures/03/2.png'; showImageCanvas(); void(0);">
+                        <img alt="眉2" height="100" src="./pictures/03/2.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph03.src = './pictures/03/3.png'; showImageCanvas(); void(0);">
+                        <img alt="眉3" height="100" src="./pictures/03/3.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph03.src = './pictures/03/4.png'; showImageCanvas(); void(0);">
+                        <img alt="眉4" height="100" src="./pictures/03/4.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph03.src = './pictures/03/5.png'; showImageCanvas(); void(0);">
+                        <img alt="眉5" height="100" src="./pictures/03/5.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph03.src = './pictures/0.png'; showImageCanvas(); void(0);">
+                        <img alt="眉0" height="100" src="./pictures/0.png" width="100" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="目">
+            <ul id="tab">
+                <li>
+                    <a href="javascript:document.ph04.src = './pictures/04/1.png'; showImageCanvas(); void(0);">
+                        <!--パーツ記憶-->
+                        <img alt="目1" height="100" src="./pictures/04/1.png" width="100" /><!---->
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph04.src = './pictures/04/2.png'; showImageCanvas(); void(0);">
+                        <img alt="目2" height="100" src="./pictures/04/2.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph04.src = './pictures/04/3.png'; showImageCanvas(); void(0);">
+                        <img alt="目3" height="100" src="./pictures/04/3.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph04.src = './pictures/04/4.png'; showImageCanvas(); void(0);">
+                        <img alt="目4" height="100" src="./pictures/04/4.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph04.src = './pictures/04/5.png'; showImageCanvas(); void(0);">
+                        <img alt="目5" height="100" src="./pictures/04/5.png" width="100" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="鼻">
+            <ul id="tab">
+                <li>
+                    <a href="javascript:document.ph05.src = './pictures/05/1.png'; showImageCanvas(); void(0);">
+                        <!--パーツ記憶-->
+                        <img alt="鼻1" height="100" src="./pictures/05/1.png" width="100" /><!---->
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph05.src = './pictures/05/2.png'; showImageCanvas(); void(0);">
+                        <img alt="鼻2" height="100" src="./pictures/05/2.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph05.src = './pictures/05/3.png'; showImageCanvas(); void(0);">
+                        <img alt="鼻3" height="100" src="./pictures/05/3.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph05.src = './pictures/05/4.png'; showImageCanvas(); void(0);">
+                        <img alt="鼻4" height="100" src="./pictures/05/4.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph05.src = './pictures/05/5.png'; showImageCanvas(); void(0);">
+                        <img alt="鼻5" height="100" src="./pictures/05/5.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph05.src = './pictures/0.png'; showImageCanvas(); void(0);">
+                        <img alt="鼻0" height="100" src="./pictures/0.png" width="100" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="頬">
+            <ul id="tab">
+                <li>
+                    <a href="javascript:document.ph06.src = './pictures/06/1.png'; showImageCanvas(); void(0);">
+                        <!--パーツ記憶-->
+                        <img alt="頬1" height="100" src="./pictures/06/1.png" width="100" /><!---->
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph06.src = './pictures/06/2.png'; showImageCanvas(); void(0);">
+                        <img alt="頬2" height="100" src="./pictures/06/2.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph06.src = './pictures/06/3.png'; showImageCanvas(); void(0);">
+                        <img alt="頬3" height="100" src="./pictures/06/3.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph06.src = './pictures/06/4.png'; showImageCanvas(); void(0);">
+                        <img alt="頬4" height="100" src="./pictures/06/4.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph06.src = './pictures/06/5.png'; showImageCanvas(); void(0);">
+                        <img alt="頬5" height="100" src="./pictures/06/5.png" width="100" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="口">
+            <ul id="tab">
+                <li>
+                    <a href="javascript:document.ph07.src = './/pictures/07/1.png'; showImageCanvas(); void(0);">
+                        <!--パーツ記憶-->
+                        <img alt="口1" height="100" src=".//pictures/07/1.png" width="100" /><!---->
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph07.src = './pictures/07/2.png'; showImageCanvas(); void(0);">
+                        <img alt="口2" height="100" src="./pictures/07/2.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph07.src = './pictures/07/3.png'; showImageCanvas(); void(0);">
+                        <img alt="口3" height="100" src="./pictures/07/3.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph07.src = './pictures/07/4.png'; showImageCanvas(); void(0);">
+                        <img alt="口4" height="100" src="./pictures/07/4.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph07.src = './pictures/07/5.png'; showImageCanvas(); void(0);">
+                        <img alt="口5" height="100" src="./pictures/07/5.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph07.src = './pictures/07/6.png'; showImageCanvas(); void(0);">
+                        <img alt="Dragon Night" height="100" src="./pictures/07/6.png" width="100" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="アクセサリー">
+            <ul id="tab">
+                <li>
+                    <a href="javascript:document.ph08.src = './pictures/08/1.png'; showImageCanvas(); void(0);">
+                        <!--パーツ記憶-->
+                        <img alt="アクセサリー1" height="100" src="./pictures/08/1.png" width="100" /><!---->
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph08.src = './pictures/08/2.png'; showImageCanvas(); void(0);">
+                        <img alt="アクセサリー2" height="100" src="./pictures/08/2.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph08.src = './pictures/08/3.png'; showImageCanvas(); void(0);">
+                        <img alt="アクセサリー3" height="100" src="./pictures/08/3.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph08.src = './pictures/08/4.png'; showImageCanvas(); void(0);">
+                        <img alt="アクセサリー4" height="100" src="./pictures/08/4.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph08.src = './pictures/08/5.png'; showImageCanvas(); void(0);">
+                        <img alt="アクセサリー5" height="100" src="./pictures/08/5.png" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph08.src = './pictures/0.png'; showImageCanvas(); void(0);">
+                        <img alt="アクセサリー0" height="100" src="./pictures/0.png" width="100" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="背景">
+            <ul id="tab">
+                <li>
+                    <a href="javascript:document.ph09.src = './pictures/09/1.jpg'; showImageCanvas(); void(0);">
+                        <!--パーツ記憶-->
+                        <img alt="背景1" height="100" src="./pictures/09/1.jpg" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph09.src = './pictures/09/2.jpg'; showImageCanvas(); void(0);">
+                        <img alt="背景2" height="100" src="./pictures/09/2.jpg" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph09.src = './pictures/09/3.jpg'; showImageCanvas(); void(0);">
+                        <img alt="背景3" height="100" src="./pictures/09/3.jpg" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph09.src = './pictures/09/4.jpg'; showImageCanvas(); void(0);">
+                        <img alt="背景4" height="100" src="./pictures/09/4.jpg" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph09.src = './pictures/09/5.jpg'; showImageCanvas(); void(0);">
+                        <img alt="背景5" height="100" src="./pictures/09/5.jpg" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph09.src = './pictures/09/6.jpg'; showImageCanvas(); void(0);">
+                        <img alt="背景6" height="100" src="./pictures/09/6.jpg" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph09.src = './pictures/09/7.jpg'; showImageCanvas(); void(0);">
+                        <img alt="背景7" height="100" src="./pictures/09/7.jpg" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph09.src = './pictures/09/8.jpg'; showImageCanvas(); void(0);">
+                        <img alt="背景8" height="100" src="./pictures/09/8.jpg" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph09.src = './pictures/09/9.jpg'; showImageCanvas(); void(0);">
+                        <img alt="背景9" height="100" src="./pictures/09/9.jpg" width="100" />
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:document.ph09.src = './pictures/0.png'; showImageCanvas(); void(0);">
+                        <img alt="背景0" height="100" src="./pictures/0.png" width="100" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="プレビュー">
+        <div class="imageCover6">
+            <canvas id="jsImageCoverCanvas">
+                ご利用のブラウザでは正しく表示されません．<br />最新版のPC版Google Chrome等をご利用ください．
+            </canvas>
+        </div>
+    </div>
+		<div id="footer">
+		Copyright © 2015<a> さむねーたー </a>All Rights Reserved.
+	</div>
 </body>
 </html>
